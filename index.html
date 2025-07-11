@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generador de Enlaces WhatsApp</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fuente urbana desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cuadros-animados">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+  <div class="container">
+    <h1>🔗 WhatsApp Link Generator</h1>
+    <p class="sub">Crea tu enlace para enviar mensajes sin agregar el número</p>
+
+    <label for="numero">📞 Número de WhatsApp:</label>
+    <input type="text" id="numero" placeholder="Ej: 521234567890">
+
+    <label for="mensaje">💬 Mensaje:</label>
+    <textarea id="mensaje" placeholder="Escribe tu mensaje aquí..."></textarea>
+
+    <button onclick="generar()">Generar y Abrir WhatsApp</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function generar() {
+      const numero = document.getElementById('numero').value.trim();
+      const mensaje = encodeURIComponent(document.getElementById('mensaje').value.trim());
+
+      if (!numero) {
+        alert("Por favor ingresa un número.");
+        return;
+      }
+
+      const link = `https://wa.me/${numero}?text=${mensaje}`;
+      window.open(link, '_blank'); // Abrir automáticamente
+
+      document.getElementById('resultado').innerHTML = `
+        <p>🔗 Tu enlace:</p>
+        <a href="${link}" target="_blank">${link}</a>
+      `;
+    }
+  </script>
+</body>
+</html>

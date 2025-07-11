@@ -1,0 +1,136 @@
+/* Estilo base general */
+body {
+    font-family: 'Rubik', sans-serif;
+    background: linear-gradient(135deg, #1c1c1c, #333333);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #00ff88;
+    width: 90%;
+    max-width: 500px;
+    text-align: left;
+  }
+  
+  /* Título principal */
+  h1 {
+    color: #00ff88;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  /* Subtítulo */
+  .sub {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #ccc;
+  }
+  
+  /* Etiquetas de texto */
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ccc;
+  }
+  
+  /* Campos de texto */
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    color: white;
+    font-size: 16px;
+  }
+  
+  /* Botón de acción */
+  button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #25D366;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #128C7E;
+  }
+  
+  /* Resultado del enlace */
+  #resultado {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  #resultado a {
+    color: #00ff88;
+    word-break: break-all;
+  }
+
+
+  /* Contenedor de la animación */
+.cuadros-animados {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  /* Estilo de cada cuadro */
+  .cuadros-animados span {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: #00ff88;
+    opacity: 0.1;
+    box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+    animation: flotar 20s linear infinite;
+    top: 100%;
+  }
+  
+  /* Animación de movimiento ascendente y rotación */
+  @keyframes flotar {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.2;
+    }
+    100% {
+      transform: translateY(-110vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  /* Posición aleatoria para cada cuadro */
+  .cuadros-animados span:nth-child(1) { left: 10%; animation-delay: 0s; }
+  .cuadros-animados span:nth-child(2) { left: 25%; animation-delay: 3s; }
+  .cuadros-animados span:nth-child(3) { left: 40%; animation-delay: 6s; }
+  .cuadros-animados span:nth-child(4) { left: 55%; animation-delay: 1s; }
+  .cuadros-animados span:nth-child(5) { left: 70%; animation-delay: 4s; }
+  .cuadros-animados span:nth-child(6) { left: 85%; animation-delay: 2s; }
+  .cuadros-animados span:nth-child(7) { left: 30%; animation-delay: 7s; }
+  .cuadros-animados span:nth-child(8) { left: 60%; animation-delay: 5s; }
+  
+  
